@@ -89,7 +89,7 @@ public class FeedbackCRUDImpl implements FeedbackCRUD {
 		BoolQueryBuilder query = QueryBuilders.boolQuery();
 
 		Script script = new Script(ScriptType.INLINE, "painless",
-				"doc['feedbackId'].value == doc['rootFeedbackId'].value", new HashMap<String, Object>());
+				"doc['feedbackId.keyword'].value == doc['rootFeedbackId.keyword'].value", new HashMap<String, Object>());
 		query.filter(QueryBuilders.scriptQuery(script));
 		query.must(QueryBuilders.termQuery("rootOrg", rootOrg));
 
@@ -188,7 +188,7 @@ public class FeedbackCRUDImpl implements FeedbackCRUD {
 				query.must(QueryBuilders.termQuery("feedbackBy", userId));
 			}
 		}
-		
+
 		System.out.println(query);
 		sourceBuilder.query(query);
 		searchRequest.source(sourceBuilder);
