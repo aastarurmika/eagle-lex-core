@@ -152,11 +152,11 @@ public class ContentProgressModel {
 	}
 
 	public Float getTimespent() {
-		return (timespent==null ? 0 : timespent);
+		return timespent;
 	}
 
 	public void setTimespent(Float timespent) {
-		this.timespent = timespent;
+		this.timespent = (timespent==null ? 0 : timespent);
 	}
 
 	public void setChildrenList(List<String> childrenList) {
