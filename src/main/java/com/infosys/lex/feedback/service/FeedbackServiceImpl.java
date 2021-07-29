@@ -230,6 +230,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 			tagValuePair.put("#feedback", feedbackText);
 			targetData.put("viewingAs", "author");
 			targetData.put("feedbackType", "content_feedback");
+			targetData.put("feedback", feedbackText);
 
 			if (!newThread) {
 				updateMap.put("lastActivityOn", feedback.getLastActivityOn());
@@ -244,6 +245,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 				tagValuePair.put("#feedback", rootFeedbackText);
 				targetData.put("viewingAs", "user");
 				targetData.put("feedbackType", "content_feedback");
+				targetData.put("feedback", feedbackText);
 
 			}
 			targetData.put("feedbackId", rootFeedbackId);
