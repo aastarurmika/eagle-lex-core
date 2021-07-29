@@ -188,8 +188,11 @@ public class InterestServiceImpl implements InterestService {
 			throws IOException {
 
 		if (query.trim().isEmpty()) {
-			return Arrays.asList("Scale up IoT", "Leadership & Management", "Ecosystems in new agile work",
-					"Artificial Intelligence", "Digitalization as key driver");
+			return Arrays.asList("Ante-Natal Care", "Competencies, Behaviours and Skills", "Continuum of Care",
+					"Essential Newborn Care", "Experience of Care","Healthcare Facilities","Infant Care","Infrastructure and Governance",
+					"Labour and Intrapartum Care","Midwifery Education","Newborn Care","Nursing Education",
+					"Perinatal Care","Postpartum Care","Preconception","Provision of Care","Quality Improvement","Quality of Care",
+					"Respectful Maternity Care","Resuscitation");
 		}
 		String alias = new String();
 		String scriptTopic = new String();
